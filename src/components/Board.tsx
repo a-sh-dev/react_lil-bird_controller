@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import styled, { css } from 'styled-components'
-import { Position } from '../helper/types'
+import { DirectionType, PositionType } from '../helper/types'
 import { Birdie } from './Birdie'
+import { Controller } from './Controller'
 
 type BoardProps = {
   maxGrid: number
@@ -27,18 +28,21 @@ const StyledBoard = styled.div<{ $maxGrid: number }>(
 
 export const Board = ({ maxGrid }: BoardProps) => {
   const middlePoint = Math.ceil(maxGrid / 2)
-  console.log({ middlePoint, raw: maxGrid / 2 })
 
-  const [birdie, setBirdie] = useState<Position>({
+  const [birdie, setBirdie] = useState<PositionType>({
     x: middlePoint,
     y: middlePoint,
   })
+  const [direction, setDirection] = useState<DirectionType>('right')
+
+  console.log(direction)
 
   return (
     <StyledBoardWrapper>
       <StyledBoard $maxGrid={maxGrid}>
-        <Birdie x={birdie.x} y={birdie.y} direction="right" />
+        <Birdie x={birdie.x} y={birdie.y} direction={direction} />
       </StyledBoard>
+      <Controller setDirection={setDirection} />
     </StyledBoardWrapper>
   )
 }

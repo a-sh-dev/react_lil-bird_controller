@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components'
-import { DirectionType, Position } from '../helper/types'
+import { DirectionType, PositionType } from '../helper/types'
 import { BirdieSVG } from './Svgs'
 
-type BirdieProps = Position & {
+type BirdieProps = PositionType & {
   direction: DirectionType
 }
 

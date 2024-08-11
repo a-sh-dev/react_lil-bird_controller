@@ -15,7 +15,7 @@
   --color-grey-400: #9b9b9b;
   --color-grey-500: #666666;
   --color-grey-600: #333333;
-  --color-pop-orange: #e15a1d;
+  --color-pop-orange: rgb(199 87 36);
   --color-beige: #efeae5;
 
   --color-text-primary: var(--color-grey-600);
@@ -47,15 +47,6 @@ body {
   padding: 0;
   letter-spacing: 0.07em;
   background-color: var(--color-grey-200);
-}
-
-main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-inline: clamp(0.5rem, -1rem + 8vw, 5rem);
-  border: 1px solid lightcoral;
 }
 
 footer {
@@ -91,23 +82,4 @@ footer,
 h1,
 p {
   text-align: center;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }

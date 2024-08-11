@@ -1,5 +1,5 @@
 export type DirectionType = 'right' | 'left' | 'up' | 'down'
-export type Position = {
+export type PositionType = {
   x: number
   y: number
 }
