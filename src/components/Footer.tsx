@@ -6,7 +6,7 @@ export const Footer = () => {
         href="https://github.com/a-sh-dev/react_lil-bird_controller"
         target="_blank"
       >
-        a.sh
+        a-sh.
       </a>{' '}
       in 2024
     </footer>
