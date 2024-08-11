@@ -1,6 +1,7 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Gill Sans", system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
+  letter-spacing: 0.035em;
   font-weight: 400;
 
   color-scheme: light dark;
