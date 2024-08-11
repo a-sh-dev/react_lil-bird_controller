@@ -8,7 +8,6 @@
   "bracketSameLine": false,
   "singleQuote": true,
   "arrowParens": "always",
-  "parser": "typescript",
   "overrides": [
     {
       "files": ["**/*.css", "**/*.scss", "**/*.html"],
