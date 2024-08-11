@@ -1,17 +1,12 @@
-import { Birdie } from './components/Birdie'
+import { Footer } from './components/Footer'
+import { Game } from './components/Game'
 
 function App() {
   return (
-    <>
-      <div>Hello World</div>
-      <Birdie />
-      <p>
-        Rational yet playful. Practical while progressive. Bellroy is a unique
-        blend of art and science. We constantly seek effective ways to improve,
-        work to positively impact the world and believe that diversity inspires
-        greater insights. Sound interesting?
-      </p>
-    </>
+    <div className="page_wrapper">
+      <Game />
+      <Footer />
+    </div>
   )
 }
 
