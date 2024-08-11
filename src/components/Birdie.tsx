@@ -7,7 +7,7 @@ const BirdieSVG = () => (
     viewBox="0 0 108 124"
     fill="currentColor"
     xmlns="http://www.w3.org/2000/svg"
-    className="birdie_svg"
+    className="svg__birdie"
   >
     <title>Birdie icon</title>
     <path d="M13.1787 25.0303C13.1787 22.1101 15.6817 19.6071 18.6019 19.6071C21.5221 19.6071 24.0251 22.1101 23.608 24.6131C24.0251 29.202 25.6938 33.7909 28.1968 36.7111C30.6999 33.3737 32.7857 28.3677 32.7857 24.6131C32.7857 21.6929 34.8716 19.1899 38.209 19.1899C41.1292 19.1899 44.0493 21.2758 44.0493 24.196C44.0493 27.1162 41.5463 29.6192 38.6261 29.6192H37.3746C36.1231 34.2081 33.2029 38.797 30.2827 41.3L28.614 42.5515L26.9453 41.7172C23.1908 38.797 20.6877 34.6253 19.4362 30.0364C16.0989 30.8707 13.1787 27.9505 13.1787 25.0303Z" />
@@ -15,7 +15,7 @@ const BirdieSVG = () => (
   </svg>
 )
 
-const StyledBirdieWrapper = styled.span.attrs({
+const StyledBirdieWrapper = styled.div.attrs({
   role: 'img',
 })`
   /* ${() => {
@@ -23,12 +23,15 @@ const StyledBirdieWrapper = styled.span.attrs({
       fill: red;
     `
   }} */
+  display: inline-grid;
+  padding: 0.5rem;
+  background-color: pink;
   transform-origin: center;
-  transform: scaleX(-1);
+  /* transform: scaleX(-1); */
 
-  & .birdie_svg {
+  & .svg__birdie {
     font-size: 5rem;
-    fill: var(--color-pop-orange);
+    color: var(--color-pop-orange);
     /* transform: scaleX(-1); */
   }
 `
