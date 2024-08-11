@@ -1,7 +1,6 @@
 :root {
   font-family: "Gill Sans", system-ui, Helvetica, Arial, sans-serif;
   line-height: 1.5;
-  letter-spacing: 0.035em;
   font-weight: 400;
 
   font-synthesis: none;
@@ -23,48 +22,75 @@
   --color-text-secondary: var(--color-grey-500);
   --color-text-inverted: var(--color-white);
 
+  --ft-xs: clamp(0.64rem, 0.05vi + 0.63rem, 0.67rem);
+  --ft-sm: clamp(0.8rem, 0.16vi + 0.77rem, 0.89rem);
+  --ft-base: clamp(1rem, 0.33vi + 0.94rem, 1.19rem);
+  --ft-md: clamp(1.25rem, 0.59vi + 1.14rem, 1.58rem);
+  --ft-lg: clamp(1.56rem, 0.97vi + 1.38rem, 2.11rem);
+  --ft-xl: clamp(1.95rem, 1.53vi + 1.67rem, 2.81rem);
+
+  --ft-birdie: clamp(2.5rem, 4.44vi + 1.67rem, 5rem);
+
   color-scheme: light dark;
   color: var(--color-text-primary);
-  background-color: #242424;
+  background-color: var(--color-grey-200);
 }
 
 a {
-  font-weight: 500;
   text-decoration: inherit;
-  color: var(--color-grey-600);
+  color: var(--color-pop-orange);
   font-weight: bold;
 }
 
 body {
   margin: 0;
   padding: 0;
+  letter-spacing: 0.07em;
   background-color: var(--color-grey-200);
 }
 
 main {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-inline: clamp(0.5rem, -1rem + 8vw, 5rem);
+  border: 1px solid lightcoral;
 }
 
 footer {
-  text-align: center;
   padding: 0.8rem 0;
-  text-transform: uppercase;
-  font-size: 0.65rem;
-  letter-spacing: 0.2em;
-  color: var(--color-grey-500);
+  font-size: var(--ft-sm);
+  font-weight: 500;
+  color: var(--color-grey-300);
+  background-color: var(--color-grey-600);
+  width: 100dvw;
 }
 
 .page_wrapper {
-  /* background-color: blanchedalmond; */
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 100dvh;
+  background-image: url("/assets/background-texture-repeat.jpg");
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: var(--ft-lg);
+  font-weight: 400;
   line-height: 1.1;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: var(--ft-base);
+}
+
+footer,
+h1,
+p {
+  text-align: center;
 }
 
 button {
