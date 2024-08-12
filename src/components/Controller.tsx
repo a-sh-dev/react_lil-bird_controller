@@ -1,9 +1,9 @@
-import { Dispatch, SetStateAction } from 'react'
 import styled from 'styled-components'
 import { DirectionType } from '../helper/types'
+import { sharedStyles as s } from '../styles/sharedStyles'
 
 type ControllerProps = {
-  setDirection: Dispatch<SetStateAction<DirectionType>>
+  moveBirdie: (direction: DirectionType) => void
 }
 
 const StyledControllerWrapper = styled.div`
@@ -14,15 +14,19 @@ const StyledControllerWrapper = styled.div`
 `
 
 const StyledButton = styled.button`
-  background-color: var(--color-pop-orange);
+  font-family: monospace;
+  font-size: ${s.text.base};
+  color: ${s.palette.white};
+  background-color: ${s.palette.component.button};
   border-radius: 0.25rem;
   border: 1px solid transparent;
   padding: 0.5em 1.2em;
-  font-size: var(--fluid-type-base);
-  transition: all ease-in 0.25s;
+  box-shadow: ${s.shadow.elevated};
+  transition: all 0.2s;
 
   &:hover {
-    filter: brightness(80%);
+    background-color: ${s.palette.accent.orange};
+    box-shadow: ${s.shadow.pressed};
   }
 
   &:focus,
@@ -31,7 +35,7 @@ const StyledButton = styled.button`
   }
 `
 
-export const Controller = ({ setDirection }: ControllerProps) => {
+export const Controller = ({ moveBirdie }: ControllerProps) => {
   const buttons: { direction: DirectionType; label: string }[] = [
     { direction: 'left', label: '←' },
     { direction: 'up', label: '↑' },
@@ -42,7 +46,7 @@ export const Controller = ({ setDirection }: ControllerProps) => {
   return (
     <StyledControllerWrapper>
       {buttons.map(({ direction, label }) => (
-        <StyledButton key={direction} onClick={() => setDirection(direction)}>
+        <StyledButton key={direction} onClick={() => moveBirdie(direction)}>
           {label}
         </StyledButton>
       ))}

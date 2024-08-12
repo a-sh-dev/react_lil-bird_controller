@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import styled, { css } from 'styled-components'
 import { DirectionType, PositionType } from '../helper/types'
 import { Birdie } from './Birdie'
@@ -35,14 +35,71 @@ export const Board = ({ maxGrid }: BoardProps) => {
   })
   const [direction, setDirection] = useState<DirectionType>('right')
 
-  console.log(direction)
+  const moveBirdie = useCallback(
+    (direction: DirectionType) => {
+      setBirdie((prev) => {
+        let newX = prev.x
+        let newY = prev.y
+
+        switch (direction) {
+          case 'up':
+            newY = Math.max(1, prev.y - 1)
+            break
+          case 'down':
+            newY = Math.min(maxGrid, prev.y + 1)
+            break
+          case 'left':
+            newX = Math.max(1, prev.x - 1)
+            break
+          case 'right':
+            newX = Math.min(maxGrid, prev.x + 1)
+            break
+        }
+
+        // Only update if the position has changed
+        if (newX !== prev.x || newY !== prev.y) {
+          console.log({ x: newX, y: newY })
+
+          return { x: newX, y: newY }
+        }
+        console.log(prev)
+        return prev
+      })
+    },
+    [maxGrid],
+  )
+
+  useEffect(() => {
+    const handleKeyPress = (e: KeyboardEvent) => {
+      switch (e.key) {
+        case 'ArrowUp':
+          moveBirdie('up')
+          break
+        case 'ArrowDown':
+          moveBirdie('down')
+          break
+        case 'ArrowLeft':
+          moveBirdie('left')
+          break
+        case 'ArrowRight':
+          moveBirdie('right')
+          break
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyPress)
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyPress)
+    }
+  }, [moveBirdie])
 
   return (
     <StyledBoardWrapper>
       <StyledBoard $maxGrid={maxGrid}>
         <Birdie x={birdie.x} y={birdie.y} direction={direction} />
       </StyledBoard>
-      <Controller setDirection={setDirection} />
+      <Controller moveBirdie={moveBirdie} />
     </StyledBoardWrapper>
   )
 }
