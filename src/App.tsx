@@ -1,12 +1,13 @@
 import { Footer } from './components/Footer'
 import { Game } from './components/Game'
+import { StyledLayoutWrapper } from './styles/styled'
 
 function App() {
   return (
-    <div className="page_wrapper">
+    <StyledLayoutWrapper>
       <Game />
       <Footer />
-    </div>
+    </StyledLayoutWrapper>
   )
 }
 

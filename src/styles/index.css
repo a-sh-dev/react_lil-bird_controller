@@ -48,37 +48,10 @@ body {
   background-color: var(--color-grey-200);
 }
 
-footer {
-  padding: 0.8rem 0;
-  font-size: var(--fluid-type-sm);
-  font-weight: 500;
-  color: var(--color-grey-300);
-  background-color: var(--color-grey-600);
-  width: 100dvw;
-}
-
-.page_wrapper {
+/* .page_wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 100dvh;
   background-image: url("/assets/background-texture-repeat.jpg");
-}
-
-/* h1 {
-  font-size: var(--fluid-type-lg);
-  font-weight: 400;
-  line-height: 1.1;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-}
-
-p {
-  font-size: var(--fluid-type-base);
 } */
-
-footer,
-h1,
-p {
-  text-align: center;
-}
