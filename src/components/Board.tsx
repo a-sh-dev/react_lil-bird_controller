@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
 import styled, { css } from 'styled-components'
-import { DirectionType, PositionType } from '../helper/types'
+import { DirectionType, PositionType, XDirectionType } from '../helper/types'
 import { Birdie } from './Birdie'
 import { Controller } from './Controller'
 
@@ -18,11 +18,9 @@ const StyledBoard = styled.div<{ $maxGrid: number }>(
     grid-template-columns: repeat(${$maxGrid}, minmax(30px, 1fr));
     grid-template-rows: repeat(${$maxGrid}, minmax(30px, 1fr));
     background-color: var(--color-white);
-    /* margin: 0 auto; */
 
     border: 1px solid var(--color-grey-400);
-    /* max-width: 500px;
-    min-width: 200px; */
+    min-width: 200px;
   `,
 )
 
@@ -33,37 +31,36 @@ export const Board = ({ maxGrid }: BoardProps) => {
     x: middlePoint,
     y: middlePoint,
   })
-  const [direction, setDirection] = useState<DirectionType>('right')
+  const [xDirection, setXDirection] = useState<XDirectionType>('left')
 
   const moveBirdie = useCallback(
-    (direction: DirectionType) => {
-      setBirdie((prev) => {
-        let newX = prev.x
-        let newY = prev.y
+    (newDirection: DirectionType) => {
+      setBirdie((prevDirection) => {
+        let newX = prevDirection.x
+        let newY = prevDirection.y
 
-        switch (direction) {
+        switch (newDirection) {
           case 'up':
-            newY = Math.max(1, prev.y - 1)
+            newY = Math.max(1, prevDirection.y - 1)
             break
           case 'down':
-            newY = Math.min(maxGrid, prev.y + 1)
+            newY = Math.min(maxGrid, prevDirection.y + 1)
             break
           case 'left':
-            newX = Math.max(1, prev.x - 1)
+            newX = Math.max(1, prevDirection.x - 1)
+            setXDirection('left')
             break
           case 'right':
-            newX = Math.min(maxGrid, prev.x + 1)
+            newX = Math.min(maxGrid, prevDirection.x + 1)
+            setXDirection('right')
             break
         }
 
         // Only update if the position has changed
-        if (newX !== prev.x || newY !== prev.y) {
-          console.log({ x: newX, y: newY })
-
+        if (newX !== prevDirection.x || newY !== prevDirection.y) {
           return { x: newX, y: newY }
         }
-        console.log(prev)
-        return prev
+        return prevDirection
       })
     },
     [maxGrid],
@@ -97,7 +94,7 @@ export const Board = ({ maxGrid }: BoardProps) => {
   return (
     <StyledBoardWrapper>
       <StyledBoard $maxGrid={maxGrid}>
-        <Birdie x={birdie.x} y={birdie.y} direction={direction} />
+        <Birdie x={birdie.x} y={birdie.y} xDirection={xDirection} />
       </StyledBoard>
       <Controller moveBirdie={moveBirdie} />
     </StyledBoardWrapper>

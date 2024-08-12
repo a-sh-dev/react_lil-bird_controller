@@ -1,48 +1,44 @@
 import styled, { css } from 'styled-components'
-import { DirectionType, PositionType } from '../helper/types'
+import { PositionType, XDirectionType } from '../helper/types'
+import { sharedStyles as s } from '../styles/sharedStyles'
 import { BirdieSVG } from './Svgs'
 
 type BirdieProps = PositionType & {
-  direction: DirectionType
+  xDirection: XDirectionType
 }
 
 type StyledBirdieWrapperProps = {
   $x: number
   $y: number
-  $isFlipped: boolean
+  $isFlipped?: boolean
+  $xDirection: XDirectionType
 }
 
 const StyledBirdieWrapper = styled.div.attrs<StyledBirdieWrapperProps>({
   role: 'img',
 })`
-  ${({ $x, $y }) => {
+  ${({ $x, $y, $xDirection: $direction }) => {
     return css`
       grid-column: ${$x};
       grid-row: ${$y};
-
-      /* transform: scaleX(-1); */
-      /* transform-origin: center; */
+      transform: ${$direction === 'right' ? 'scaleX(-1)' : 'none'};
     `
   }}
   display: grid;
   place-items: center;
   aspect-ratio: 1;
   padding: 0.5rem;
-
-  /* border: 1px solid red; */
+  transition: transform 0.2s ease-in-out;
 
   & .svg__birdie {
-    font-size: var(--fluid-type-birdie);
-    color: var(--color-pop-orange);
-    /* transform: scaleX(-1); */
+    font-size: ${s.size.birdie};
+    color: ${s.palette.accent.orange};
   }
 `
 
-export const Birdie = ({ x, y, direction }: BirdieProps) => {
-  const isFlipped = direction === 'right' || direction === 'left'
-
+export const Birdie = ({ x, y, xDirection }: BirdieProps) => {
   return (
-    <StyledBirdieWrapper $x={x} $y={y} $isFlipped={isFlipped}>
+    <StyledBirdieWrapper $x={x} $y={y} $xDirection={xDirection}>
       <BirdieSVG />
     </StyledBirdieWrapper>
   )
