@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
+import { KEYBOARD_KEY } from '../helper/config'
 import {
   DirectionType,
   PositionType,
@@ -57,16 +58,16 @@ export const Board = ({ maxGrid }: BoardProps) => {
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
       switch (e.key) {
-        case 'ArrowUp':
+        case KEYBOARD_KEY.up:
           moveBirdie('up')
           break
-        case 'ArrowDown':
+        case KEYBOARD_KEY.down:
           moveBirdie('down')
           break
-        case 'ArrowLeft':
+        case KEYBOARD_KEY.left:
           moveBirdie('left')
           break
-        case 'ArrowRight':
+        case KEYBOARD_KEY.right:
           moveBirdie('right')
           break
       }
