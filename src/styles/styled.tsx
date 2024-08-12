@@ -67,8 +67,8 @@ export const StyledBoardWrapper = styled.div`
 export const StyledBoard = styled.div<{ $maxGrid: number }>(
   ({ $maxGrid }) => css`
     display: grid;
-    grid-template-columns: repeat(${$maxGrid}, minmax(30px, 1fr));
-    grid-template-rows: repeat(${$maxGrid}, minmax(30px, 1fr));
+    grid-template-columns: repeat(${$maxGrid}, minmax(${s.size.birdie}, 1fr));
+    grid-template-rows: repeat(${$maxGrid}, minmax(${s.size.birdie}, 1fr));
     background-color: ${s.palette.white};
 
     border: 1px solid ${s.palette.grey[400]};
