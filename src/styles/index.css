@@ -22,16 +22,15 @@
   --color-text-secondary: var(--color-grey-500);
   --color-text-inverted: var(--color-white);
 
-  --ft-xs: clamp(0.64rem, 0.05vi + 0.63rem, 0.67rem);
-  --ft-sm: clamp(0.8rem, 0.16vi + 0.77rem, 0.89rem);
-  --ft-base: clamp(1rem, 0.33vi + 0.94rem, 1.19rem);
-  --ft-md: clamp(1.25rem, 0.59vi + 1.14rem, 1.58rem);
-  --ft-lg: clamp(1.56rem, 0.97vi + 1.38rem, 2.11rem);
-  --ft-xl: clamp(1.95rem, 1.53vi + 1.67rem, 2.81rem);
+  --fluid-type-xs: clamp(0.64rem, 0.05vi + 0.63rem, 0.67rem);
+  --fluid-type-sm: clamp(0.8rem, 0.16vi + 0.77rem, 0.89rem);
+  --fluid-type-base: clamp(1rem, 0.33vi + 0.94rem, 1.19rem);
+  --fluid-type-md: clamp(1.25rem, 0.59vi + 1.14rem, 1.58rem);
+  --fluid-type-lg: clamp(1.56rem, 0.97vi + 1.38rem, 2.11rem);
+  --fluid-type-xl: clamp(1.95rem, 1.53vi + 1.67rem, 2.81rem);
 
-  --ft-birdie: clamp(2.5rem, 4.44vi + 1.67rem, 5rem);
+  --fluid-type-birdie: clamp(2.5rem, 4.44vi + 1.67rem, 5rem);
 
-  color-scheme: light dark;
   color: var(--color-text-primary);
   background-color: var(--color-grey-200);
 }
@@ -51,7 +50,7 @@ body {
 
 footer {
   padding: 0.8rem 0;
-  font-size: var(--ft-sm);
+  font-size: var(--fluid-type-sm);
   font-weight: 500;
   color: var(--color-grey-300);
   background-color: var(--color-grey-600);
@@ -66,8 +65,8 @@ footer {
   background-image: url("/assets/background-texture-repeat.jpg");
 }
 
-h1 {
-  font-size: var(--ft-lg);
+/* h1 {
+  font-size: var(--fluid-type-lg);
   font-weight: 400;
   line-height: 1.1;
   letter-spacing: 0.15em;
@@ -75,8 +74,8 @@ h1 {
 }
 
 p {
-  font-size: var(--ft-base);
-}
+  font-size: var(--fluid-type-base);
+} */
 
 footer,
 h1,

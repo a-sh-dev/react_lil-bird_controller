@@ -32,7 +32,7 @@ const StyledBirdieWrapper = styled.div.attrs<StyledBirdieWrapperProps>({
   /* border: 1px solid red; */
 
   & .svg__birdie {
-    font-size: var(--ft-birdie);
+    font-size: var(--fluid-type-birdie);
     color: var(--color-pop-orange);
     /* transform: scaleX(-1); */
   }

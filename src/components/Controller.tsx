@@ -18,7 +18,7 @@ const StyledButton = styled.button`
   border-radius: 0.25rem;
   border: 1px solid transparent;
   padding: 0.5em 1.2em;
-  font-size: var(--ft-base);
+  font-size: var(--fluid-type-base);
   transition: all ease-in 0.25s;
 
   &:hover {
