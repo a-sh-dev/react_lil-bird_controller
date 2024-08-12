@@ -1,8 +1,7 @@
 import styled from 'styled-components'
 import { MAX_GRID } from '../helper/config'
+import { sharedStyles as s } from '../styles/sharedStyles'
 import { Board } from './Board'
-
-type Props = {}
 
 const StyledGame = styled.main`
   flex: 1;
@@ -12,9 +11,11 @@ const StyledGame = styled.main`
   padding-inline: clamp(0.5rem, -1rem + 8vw, 5rem);
 `
 
-const StyldGameHeader = styled.header`
+const StyledGameHeader = styled.header`
+  text-align: center;
+
   h1 {
-    font-size: var(--fluid-type-lg);
+    font-size: ${s.text.lg};
     font-weight: 400;
     line-height: 1.1;
     letter-spacing: 0.15em;
@@ -22,26 +23,20 @@ const StyldGameHeader = styled.header`
   }
 
   p {
-    font-size: var(--fluid-type-base);
-  }
-
-  footer,
-  h1,
-  p {
-    text-align: center;
+    font-size: ${s.text.base};
   }
 `
 
-export const Game = (props: Props) => {
+export const Game = () => {
   return (
     <StyledGame>
-      <StyldGameHeader>
+      <StyledGameHeader>
         <h1>Lil' Birdie is learning to walk</h1>
         <p>
-          Guide Lil' Birdie using the directional keyboard keys on desktop or by
-          clicking the buttons.
+          Guide Lil' Birdie using the directional keyboard keys or by clicking
+          the buttons below.
         </p>
-      </StyldGameHeader>
+      </StyledGameHeader>
       <Board maxGrid={MAX_GRID} />
     </StyledGame>
   )
