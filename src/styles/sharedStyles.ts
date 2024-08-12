@@ -14,9 +14,15 @@ const palette = {
     orange: 'rgb(199 87 36)',
     beige: '#efeae5',
   },
+  opacity: {
+    shadow: 'rgba(0, 0, 0, 0.5)',
+  },
+  component: {
+    button: 'rgb(217,83,39)',
+  },
 }
 
-export const styles = {
+export const sharedStyles = {
   palette: {
     ...palette,
     text: {
@@ -33,6 +39,14 @@ export const styles = {
     md: 'clamp(1.25rem, 0.59vi + 1.14rem, 1.58rem)',
     lg: 'clamp(1.56rem, 0.97vi + 1.38rem, 2.11rem)',
     xl: 'clamp(1.95rem, 1.53vi + 1.67rem, 2.81rem)',
+  },
+
+  size: {
     birdie: 'clamp(2.5rem, 4.44vi + 1.67rem, 5rem)',
+  },
+
+  shadow: {
+    elevated: `0 12px 10px -10px ${palette.opacity.shadow}`,
+    pressed: `0 5px 10px -5px ${palette.opacity.shadow}`,
   },
 }
