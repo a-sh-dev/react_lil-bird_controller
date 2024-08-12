@@ -1,20 +1,4 @@
-import styled from 'styled-components'
-import { sharedStyles as s } from '../styles/sharedStyles'
-
-const StyledFooter = styled.footer`
-  padding: 0.8rem 0;
-  font-size: ${s.text.sm};
-  text-align: center;
-  color: ${s.palette.grey[300]};
-  background-color: ${s.palette.grey[600]};
-  width: 100dvw;
-
-  & a {
-    text-decoration: inherit;
-    font-weight: bold;
-    color: ${s.palette.accent.orange};
-  }
-`
+import { StyledFooter } from '../styles/styled'
 
 export const Footer = () => {
   return (

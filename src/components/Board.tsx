@@ -1,30 +1,16 @@
 import { useCallback, useEffect, useState } from 'react'
-import styled, { css } from 'styled-components'
-import { DirectionType, PositionType, XDirectionType } from '../helper/types'
-import { sharedStyles as s } from '../styles/sharedStyles'
+import {
+  DirectionType,
+  PositionType,
+  XDirectionType,
+} from '../helper/sharedTypes'
+import { StyledBoard, StyledBoardWrapper } from '../styles/styled'
 import { Birdie } from './Birdie'
 import { Controller } from './Controller'
 
 type BoardProps = {
   maxGrid: number
 }
-
-const StyledBoardWrapper = styled.div`
-  margin: 1rem auto;
-`
-
-const StyledBoard = styled.div<{ $maxGrid: number }>(
-  ({ $maxGrid }) => css`
-    display: grid;
-    grid-template-columns: repeat(${$maxGrid}, minmax(30px, 1fr));
-    grid-template-rows: repeat(${$maxGrid}, minmax(30px, 1fr));
-    background-color: ${s.palette.white};
-
-    border: 1px solid ${s.palette.grey[400]};
-    border-radius: ${s.radius.sm};
-    min-width: 200px;
-  `,
-)
 
 export const Board = ({ maxGrid }: BoardProps) => {
   const middlePoint = Math.ceil(maxGrid / 2)
