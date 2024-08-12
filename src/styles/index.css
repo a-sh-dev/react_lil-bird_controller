@@ -7,51 +7,11 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  --color-white: #ffffff;
-  --color-grey-100: #f7f7f7;
-  --color-grey-200: #efefef;
-  --color-grey-300: #dbdbdb;
-  --color-grey-400: #9b9b9b;
-  --color-grey-500: #666666;
-  --color-grey-600: #333333;
-  --color-pop-orange: rgb(199 87 36);
-  --color-beige: #efeae5;
-
-  --color-text-primary: var(--color-grey-600);
-  --color-text-secondary: var(--color-grey-500);
-  --color-text-inverted: var(--color-white);
-
-  --fluid-type-xs: clamp(0.64rem, 0.05vi + 0.63rem, 0.67rem);
-  --fluid-type-sm: clamp(0.8rem, 0.16vi + 0.77rem, 0.89rem);
-  --fluid-type-base: clamp(1rem, 0.33vi + 0.94rem, 1.19rem);
-  --fluid-type-md: clamp(1.25rem, 0.59vi + 1.14rem, 1.58rem);
-  --fluid-type-lg: clamp(1.56rem, 0.97vi + 1.38rem, 2.11rem);
-  --fluid-type-xl: clamp(1.95rem, 1.53vi + 1.67rem, 2.81rem);
-
-  --fluid-type-birdie: clamp(2.5rem, 4.44vi + 1.67rem, 5rem);
-
-  color: var(--color-text-primary);
-  background-color: var(--color-grey-200);
-}
-
-a {
-  text-decoration: inherit;
-  color: var(--color-pop-orange);
-  font-weight: bold;
 }
 
 body {
   margin: 0;
   padding: 0;
   letter-spacing: 0.07em;
-  background-color: var(--color-grey-200);
+  background-color: #ffffff;
 }
-
-/* .page_wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100dvh;
-  background-image: url("/assets/background-texture-repeat.jpg");
-} */

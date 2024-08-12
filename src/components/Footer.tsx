@@ -6,8 +6,14 @@ const StyledFooter = styled.footer`
   font-size: ${s.text.sm};
   text-align: center;
   color: ${s.palette.grey[300]};
-  background-color: var(--color-grey-600);
+  background-color: ${s.palette.grey[600]};
   width: 100dvw;
+
+  & a {
+    text-decoration: inherit;
+    font-weight: bold;
+    color: ${s.palette.accent.orange};
+  }
 `
 
 export const Footer = () => {

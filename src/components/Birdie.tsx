@@ -10,18 +10,17 @@ type BirdieProps = PositionType & {
 type StyledBirdieWrapperProps = {
   $x: number
   $y: number
-  $isFlipped?: boolean
   $xDirection: XDirectionType
 }
 
 const StyledBirdieWrapper = styled.div.attrs<StyledBirdieWrapperProps>({
   role: 'img',
 })`
-  ${({ $x, $y, $xDirection: $direction }) => {
+  ${({ $x, $y, $xDirection }) => {
     return css`
       grid-column: ${$x};
       grid-row: ${$y};
-      transform: ${$direction === 'right' ? 'scaleX(-1)' : 'none'};
+      transform: ${$xDirection === 'right' ? 'scaleX(-1)' : 'none'};
     `
   }}
   display: grid;

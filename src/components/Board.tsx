@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import styled, { css } from 'styled-components'
 import { DirectionType, PositionType, XDirectionType } from '../helper/types'
+import { sharedStyles as s } from '../styles/sharedStyles'
 import { Birdie } from './Birdie'
 import { Controller } from './Controller'
 
@@ -17,9 +18,10 @@ const StyledBoard = styled.div<{ $maxGrid: number }>(
     display: grid;
     grid-template-columns: repeat(${$maxGrid}, minmax(30px, 1fr));
     grid-template-rows: repeat(${$maxGrid}, minmax(30px, 1fr));
-    background-color: var(--color-white);
+    background-color: ${s.palette.white};
 
-    border: 1px solid var(--color-grey-400);
+    border: 1px solid ${s.palette.grey[400]};
+    border-radius: ${s.radius.sm};
     min-width: 200px;
   `,
 )

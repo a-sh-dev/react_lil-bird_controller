@@ -49,4 +49,8 @@ export const sharedStyles = {
     elevated: `0 12px 10px -10px ${palette.opacity.shadow}`,
     pressed: `0 5px 10px -5px ${palette.opacity.shadow}`,
   },
+
+  radius: {
+    sm: '0.25rem',
+  },
 }

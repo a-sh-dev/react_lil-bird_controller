@@ -18,7 +18,7 @@ const StyledButton = styled.button`
   font-size: ${s.text.base};
   color: ${s.palette.white};
   background-color: ${s.palette.component.button};
-  border-radius: 0.25rem;
+  border-radius: ${s.radius.sm};
   border: 1px solid transparent;
   padding: 0.5em 1.2em;
   box-shadow: ${s.shadow.elevated};
