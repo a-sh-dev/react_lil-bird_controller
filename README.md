@@ -32,16 +32,16 @@ pnpm test
 
 ## Assumptions
 
-- For the user experience and a Bellroy look, I gave a context of "Lil' Birdie is Learning to Walk" little game as opposed to just a robot simulator.
+- For the user experience and a Bellroy look, I provided a context of *"Lil' Birdie is Learning to Walk"* little game rather than just a robot simulator. 
 - Inspired by a snake game, this little game has been simplified and can be extended for additional features.
 - "Cardinal directions" are limited to only the x and y-axis, and the diagonal direction is not covered.
-- The <s>robot</s> birdie can be controlled using the keyboard's directional keys and supplied buttons for mobile users.      
+- The <s>robot</s> Birdie can be controlled using the keyboard's directional keys and supplied buttons for mobile users.      
 
 ## Design decisions
 
 - I used `TypeScript` to improve the code quality by writing more reliable and especially maintainable code. The benefit of static typing to `JavaScript` will help prevent errors in development. 
 - To maintain code consistency for collaborative work, I added basic `es-lint`, `prettier`, and VSCode settings (`.vscode`).
-- I added a simple `CI/CD` to check tests for newly pushed PRs.
+- I added a simple `GitHub Actions` to check tests for newly pushed PRs.
 
 ## Tech stack
 
@@ -53,18 +53,17 @@ pnpm test
 
 ### Testing
 
-- I regret not being able to add behavioral tests through user events due to an incompatibility between `Vitest` and `styled-components`, which I was not aware of. I would have chosen a different `CSS-in-JS` framework that may work better for testing.
-  - In a realistic scenario, ideally, I wouldn't test styles, such as snapshot testing. However, since this game heavily uses CSS grid and styling for moving the birdie, it might be feasible to assert the birdie's grid column and row position based on user interaction.
-  - Visual testing can also be done through `Storybook`.
+- Separated the movement logic into its own utility to make it more testable and reusable.
+- Ideally, the movement logic with the states can be separated into its own custom hook so that behaviour tests can be implemented. For simplicity, I only test the movement logic.
 
 ### Design
 
-- For simplicity, I only used a shared styles object throughout the styling instead of relying on CSS variables. Ideally, a theme and theme provider would be set up for better consistency and maintainability.
+- For simplicity, I used a shared styles object throughout the styling instead of relying on CSS variables. Ideally, a theme and theme provider would be set up for better consistency and maintainability.
 
 ### User experience that can be improved
 
-- For simplicity, I didn't add the disability buttons when the user reached the board boundary.
-- If I had more time, I would add simple directional chevrons that appear around the Birdie when the keyboard keys are pressed or buttons have hovered.
+- The buttons can be disabled when the bird reaches the board boundary. This can be done with the controllers inheriting the bird's position to check if it's at the maximum boundary of the board.
+- I would add simple directional chevrons to indicate the Birdie's movement direction, especially when moving up and down. These should appear around the Birdie when the keyboard keys are pressed or buttons are hovered over. 
 
 ---
 
