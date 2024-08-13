@@ -38,15 +38,12 @@ pnpm test
 
 > https://a-sh-dev.github.io/react_lil-bird_controller/
 
-## Assumptions
+## Design decisions & Assumptions
 
 - For the user experience and a Bellroy look, I provided a context of _"Lil' Birdie is Learning to Walk"_ little game rather than just a robot simulator.
 - Inspired by a snake game, this little game has been simplified and can be extended for additional features.
-- "Cardinal directions" are limited to only the x and y-axis, and the diagonal direction is not covered.
 - The <s>robot</s> Birdie can be controlled using the keyboard's directional keys and supplied buttons for mobile users.
-
-## Design decisions
-
+- "Cardinal directions" are confined to the four common directions on button controllers, while diagonal movements work on keyboard keys when pressed simultaneously.
 - I used `TypeScript` to improve the code quality by writing more reliable and especially maintainable code. The benefit of static typing to `JavaScript` will help prevent errors in development.
 - To maintain code consistency for collaborative work, I added basic `es-lint`, `prettier`, and VSCode settings (`.vscode`).
 - I added a simple `GitHub Actions CI/CD` to check tests for newly pushed PRs & automated deployment workflow.
@@ -72,7 +69,7 @@ pnpm test
 ### User experience that can be improved
 
 - The buttons can be disabled when the bird reaches the board boundary. This can be done with the controllers inheriting the bird's position to check if it's at the maximum boundary of the board.
-- I would add simple directional chevrons to indicate the Birdie's movement direction, especially when moving up and down. These should appear around the Birdie when the keyboard keys are pressed or buttons are hovered over.
+- I would add simple directional chevrons to indicate the Birdie's movement direction, especially when moving up and down. These should appear around the Birdie when the keyboard keys are pressed, or buttons are hovered over.
 
 ---
 
