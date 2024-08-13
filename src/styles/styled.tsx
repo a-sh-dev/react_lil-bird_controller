@@ -7,7 +7,7 @@ export const StyledLayoutWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   min-height: 100dvh;
-  background-image: url('/assets/background-texture-repeat.jpg');
+  background-image: url('./assets/background-texture-repeat.jpg');
 `
 
 export const StyledGame = styled.main`
