@@ -5,6 +5,7 @@ import {
   PositionType,
   XDirectionType,
 } from '../helper/sharedTypes'
+import { calculatePosition } from '../helper/utils'
 import { StyledBoard, StyledBoardWrapper } from '../styles/styled'
 import { Birdie } from './Birdie'
 import { Controller } from './Controller'
@@ -14,42 +15,24 @@ type BoardProps = {
 }
 
 export const Board = ({ maxGrid }: BoardProps) => {
-  const middlePoint = Math.ceil(maxGrid / 2)
+  const centerPosition = Math.ceil(maxGrid / 2)
 
   const [birdie, setBirdie] = useState<PositionType>({
-    x: middlePoint,
-    y: middlePoint,
+    x: centerPosition,
+    y: centerPosition,
   })
   const [xDirection, setXDirection] = useState<XDirectionType>('left')
 
   const moveBirdie = useCallback(
     (newDirection: DirectionType) => {
       setBirdie((prevDirection) => {
-        let newX = prevDirection.x
-        let newY = prevDirection.y
+        const newPosition = calculatePosition(prevDirection, newDirection)
 
-        switch (newDirection) {
-          case 'up':
-            newY = Math.max(1, prevDirection.y - 1)
-            break
-          case 'down':
-            newY = Math.min(maxGrid, prevDirection.y + 1)
-            break
-          case 'left':
-            newX = Math.max(1, prevDirection.x - 1)
-            setXDirection('left')
-            break
-          case 'right':
-            newX = Math.min(maxGrid, prevDirection.x + 1)
-            setXDirection('right')
-            break
+        if (newDirection === 'left' || newDirection === 'right') {
+          setXDirection(newDirection)
         }
 
-        // Only update if the position has changed
-        if (newX !== prevDirection.x || newY !== prevDirection.y) {
-          return { x: newX, y: newY }
-        }
-        return prevDirection
+        return newPosition
       })
     },
     [maxGrid],
