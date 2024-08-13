@@ -27,4 +27,5 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: ['./src/__tests__/setup.ts'],
   },
+  base: '/react_lil-bird_controller/',
 })
