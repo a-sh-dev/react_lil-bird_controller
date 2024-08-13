@@ -32,7 +32,7 @@ pnpm test
 
 ## Preview
 
-![preview of app](./docs/preview.png)
+![preview of app](./docs/preview.gif)
 
 ## Deployed Link
 
