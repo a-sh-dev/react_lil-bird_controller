@@ -1,4 +1,4 @@
-# 🐥 Lil' Birdie Controller
+# 🐥 Lil' Birdie Walker
 
 ## How to run
 
@@ -8,25 +8,25 @@ This project uses `pnpm` as the package manager. Please install `pnpm` first, an
 
 After installing `pnpm`, install the dependencies first by running:
 
-```bash
+```
 pnpm install
 ```
 
 Then, to run the app:
 
-```bash
+```
 pnpm dev
 ```
 
 View the development on the browser:
 
 ```
-http://localhost:5173/react_lil-bird_controller/.
+http://localhost:5173
 ```
 
 To run tests:
 
-```bash
+```
 pnpm test
 ```
 
